@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title> Page Scroll Progress Bar  CSS3 & Vanilla Javascript</title>
+</head>
+<body>
+     <div class="progressbar"></div>     
+     <div class="scrollpath"></div>     
+     <div class="percent"></div>     
+
+     <section>
+         <h2>Creative Scroll Progress Bar</h2>
+         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet architecto reiciendis soluta rem similique, qui sed aliquam. Perspiciatis sint explicabo id numquam animi ea, corrupti molestias ratione quidem nihil quibusdam autem officia fugiat hic doloremque neque sit pariatur totam natus laboriosam? Enim, quam! Corrupti quisquam quos nesciunt. Blanditiis, adipisci ab optio, architecto suscipit voluptas magni inventore, nihil necessitatibus aut velit voluptatibus nostrum molestias assumenda! Laudantium excepturi nobis sunt quos facilis harum deserunt aperiam rem blanditiis iure, voluptate ratione, ullam at iste autem, architecto ut delectus? Officia dignissimos exercitationem numquam, unde et incidunt quod in quam quibusdam voluptates! Placeat a vero necessitatibus natus fugit rerum laboriosam quaerat, aperiam, atque, temporibus exercitationem ipsam iure eaque expedita ad error corrupti modi hic repellendus voluptates nemo eos dolorem incidunt! Perferendis libero beatae ex, esse officia tenetur, iure est dicta, accusantium ratione quis alias debitis cupiditate. Nesciunt sint expedita amet, nobis tenetur sit cum atque nam minus a, maxime sed dolorum voluptatum est accusamus officia facilis placeat impedit dignissimos magni. Eligendi eius nemo deleniti sint dolorem quas vero, officiis soluta fugiat possimus dolore reiciendis, quibusdam omnis? Tempore rerum unde odit incidunt hic esse eum, eaque quisquam cum non cupiditate tenetur quo quibusdam saepe maiores assumenda maxime repudiandae laboriosam veniam fugit voluptatibus eligendi! Molestias temporibus ducimus repellat ipsum sequi earum assumenda ab deleniti nam amet officia minima quas et dolore praesentium labore placeat sint, sit vel quod dicta? Veritatis eaque expedita animi. Laudantium error commodi necessitatibus, perspiciatis quod, sint doloremque impedit voluptas qui fugiat molestias quaerat, blanditiis nisi reiciendis non similique pariatur nihil temporibus explicabo magni molestiae! Quibusdam obcaecati quam, id, a incidunt reiciendis sint error pariatur autem animi quo dolor voluptate iste, distinctio doloremque quod aliquid eius labore quis ratione facere magnam qui. Impedit, nostrum odit dolores provident quasi esse consectetur, possimus recusandae natus, praesentium deleniti nisi? Explicabo error quae veniam, dicta tenetur magnam ratione, doloribus neque ea est ab dolorem facilis. Commodi explicabo, placeat doloremque sed, quae pariatur, dignissimos asperiores tenetur facilis impedit repellat fuga recusandae autem incidunt quis. Voluptatem doloribus eum earum ut architecto iste animi, sapiente nihil provident soluta reprehenderit vel veritatis amet nesciunt possimus tenetur dolorum eaque harum suscipit officiis fugit tempora, quisquam dolor? Placeat itaque autem alias molestias numquam nulla quasi id tempora doloribus qui non blanditiis ipsum facere sequi doloremque voluptas dicta aut, tempore enim veritatis est repudiandae reiciendis dolores quisquam. Porro facilis laudantium consectetur, tenetur vero accusantium officia atque provident magni deleniti quos accusamus molestiae eaque, aliquam nam odit nesciunt dicta? Suscipit nemo culpa laboriosam neque eius voluptates aspernatur recusandae error non? Nobis expedita ea tenetur voluptas sapiente, ex omnis adipisci eligendi qui similique libero eum accusamus provident eveniet cupiditate saepe. Reprehenderit doloremque, voluptatibus, inventore necessitatibus voluptatum nobis rem porro dicta dolore aut quibusdam, earum vero nulla expedita quae repellendus? Dolore quo minus harum sequi eligendi consequatur laudantium fugit. Libero tempora neque earum, molestias a quasi vel atque sit. Quae aliquam blanditiis cum illo voluptatibus rem possimus officiis dignissimos nam at, ea minima quos, placeat vel recusandae hic.</p>
+     </section>
+
+     <script>
+         var progressBar = document.querySelector('.progressbar');
+         var percent = document.querySelector('.percent');
+        console.log(window.innerHeight);
+        console.log(document.body.scrollHeight);
+         var totalHeight = document.body.scrollHeight - window.innerHeight;
+         console.log(totalHeight);
+
+         window.onscroll= () =>{
+            var progress = (window.pageYOffset / totalHeight ) * 100;
+            console.log(progress);
+            progressBar.style.height= progress + '%';
+            percent.innerHTML = `Page Scrolled ${Math.round(progress)} %`;
+
+         }
+     </script>
+</body>
+</html>
